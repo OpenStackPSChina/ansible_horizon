@@ -1,0 +1,2 @@
+KEYSTONE_SERVER: 192.168.59.168
+HTTP_PROXY: http://web-proxy.sgp.hp.com:8080/

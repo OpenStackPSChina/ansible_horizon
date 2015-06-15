@@ -1,0 +1,21 @@
+---
+
+#
+# Install Horizon
+#
+
+- name: Install Horizon application and dependencies
+  apt: name="{{ item }}" state=present
+  with_items:
+    - openstack-dashboard
+  become: yes
+  become_method: sudo
+  environment:
+    http_proxy: {{ HTTP_PROXY }}
+
+- name: Remove Ubuntu theme
+  apt: name="{{ item }}" state=absent
+  with_items:
+    - openstack-dashboard-ubuntu-theme
+  become: yes
+  become_method: sudo

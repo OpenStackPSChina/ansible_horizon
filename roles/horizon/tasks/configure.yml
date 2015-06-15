@@ -1,0 +1,11 @@
+---
+
+#
+# Configure Horizon
+#
+
+- name: generate local_settings.py
+  template: src="local_settings.py.j2" dest=/etc/openstack-dashboard/local_settings.py
+  notify: reload apache2
+  become: yes
+  become_method: sudo
